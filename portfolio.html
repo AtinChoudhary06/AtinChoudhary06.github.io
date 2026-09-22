@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atin Choudhary — AI / GenAI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+
+    --paper: #0B1120;
+    --ink: #F8FAFC;
+    --ink-soft: #94A3B8;
+    --accent: #3B82F6;
+    --accent-soft: #06B6D4;
+    --line: #223046;
+    --card: #172033;
+
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ max-width: 980px; margin:0 auto; padding: 0 28px; }
+
+  a{ color: inherit; }
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 28px; max-width: 980px; margin:0 auto;
+  }
+  .nav .mark{ font-family: var(--font-display); font-weight:700; font-size: 1.05rem; letter-spacing: -0.01em; text-decoration:none; }
+  .nav .links{ display:flex; gap: 22px; font-size: 0.92rem; }
+  .nav .links a{ text-decoration:none; color: var(--ink-soft); transition: color .15s; }
+  .nav .links a:hover{ color: var(--accent); }
+  .nav .links{ display: none; }
+  @media (min-width: 640px){ .nav .links{ display:flex; } }
+  .status-pill{
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink); font-weight: 500;
+    background: var(--card);
+    border: 1px solid var(--accent-soft); border-radius: 999px; padding: 5px 12px;
+    white-space: nowrap;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding: 64px 0 40px; }
+  .hero .kicker{ font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); margin-bottom: 18px; }
+  .hero h1{
+    font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em;
+    font-size: clamp(1.9rem, 5vw, 3.1rem); line-height: 1.12; max-width: 15ch;
+  }
+  .hero p.lede{ margin-top: 20px; max-width: 56ch; color: var(--ink-soft); font-size: 1.05rem; }
+  .hero .cta-row{ display:flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+  .btn{
+    font-family: var(--font-body); font-weight: 600; font-size: 0.92rem;
+    padding: 11px 20px; border-radius: 6px; text-decoration:none; display:inline-block;
+    border: 1px solid var(--ink);
+  }
+  .btn.primary{ background: var(--ink); color: var(--card); }
+  .btn.ghost{ background: var(--card); color: var(--ink); border-color: var(--line); }
+
+  /* ---------- Section shell ---------- */
+  section{ padding: 58px 0; border-top: 1px solid var(--line); }
+  .section-head{ display:flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  .section-head .tag{ font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); white-space:nowrap; }
+  .section-head h2{ font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns: 1fr; gap: 34px; }
+  @media (min-width: 760px){ .about-grid{ grid-template-columns: 1.4fr 1fr; } }
+  .about-grid p{ color: var(--ink-soft); max-width: 58ch; }
+  .about-grid p + p{ margin-top: 14px; }
+  .facts{ border-left: 2px solid var(--line); padding-left: 20px; }
+  .facts dt{ font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+  .facts dd{ font-size: 0.98rem; margin: 2px 0 16px; }
+
+  /* ---------- Toolkit ---------- */
+  .toolkit-grid{ display:grid; grid-template-columns: 1fr; gap: 22px; }
+  @media (min-width: 640px){ .toolkit-grid{ grid-template-columns: 1fr 1fr; } }
+  .toolkit-group h3{ font-size: 0.95rem; font-weight: 600; margin-bottom: 10px; }
+  .toolkit-tags{ display:flex; flex-wrap:wrap; gap: 8px; }
+  .toolkit-tags span{
+    font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink); font-weight: 500;
+    background: var(--card);
+    border: 1px solid var(--line); border-radius: 5px; padding: 5px 9px;
+  }
+
+  /* ---------- Experience ---------- */
+  .job{ display:grid; grid-template-columns: 1fr; gap: 6px 24px; }
+  @media (min-width: 640px){ .job{ grid-template-columns: 160px 1fr; } }
+  .job .when{ font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-soft); padding-top: 3px; }
+  .job h3{ font-size: 1.05rem; font-weight: 600; }
+  .job .org{ color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 10px; }
+  .job ul{ padding-left: 18px; color: var(--ink-soft); font-size: 0.95rem; }
+  .job li + li{ margin-top: 6px; }
+
+  /* ---------- Projects ---------- */
+  .project{ padding: 24px 0; border-top: 1px solid var(--line); }
+  .project:first-child{ border-top: none; padding-top: 0; }
+  .project-head{ display:flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .project-head h3{ font-size: 1.08rem; font-weight: 600; }
+  .project-head .date{ font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); }
+  .project p{ color: var(--ink-soft); font-size: 0.95rem; margin-top: 8px; max-width: 62ch; }
+  .project .stack{ display:flex; flex-wrap:wrap; gap: 7px; margin-top: 12px; }
+  .project .stack span{
+    font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink); font-weight: 500;
+    background: var(--card); border: 1px solid var(--accent-soft); border-radius: 4px; padding: 3px 8px;
+  }
+  .project .plinks{ margin-top: 12px; display:flex; gap: 18px; font-size: 0.86rem; }
+  .project .plinks a{ text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line); }
+  .project .plinks a:hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- Education ---------- */
+  .edu-row{ display:flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
+  .edu-row h3{ font-size: 1.02rem; font-weight: 600; }
+  .edu-row .org{ color: var(--ink-soft); font-size: 0.92rem; }
+  .edu-row .meta{ font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); text-align: right; }
+  .certs{ list-style: none; }
+  .certs li{
+    display:flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid var(--line);
+    font-size: 0.92rem;
+  }
+  .certs li a{ text-decoration: none; }
+  .certs li a:hover{ color: var(--accent); }
+  .certs li span{ color: var(--ink-soft); font-family: var(--font-mono); font-size: 0.78rem; }
+
+  /* ---------- Footer ---------- */
+  footer{ padding: 54px 0 calc(48px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); }
+  footer h2{ font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; max-width: 16ch; letter-spacing: -0.01em; }
+  footer .contact-row{ display:flex; flex-wrap: wrap; gap: 22px; margin-top: 22px; font-size: 0.95rem; }
+  footer .contact-row a{ text-decoration: none; border-bottom: 1px solid var(--line); }
+  footer .contact-row a:hover{ color: var(--accent); border-color: var(--accent); }
+  footer .fine{ margin-top: 40px; font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="mark" href="#top">Atin Choudhary</a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <span class="status-pill">open to AI/GenAI, DS &amp; ML roles</span>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div class="kicker">AI Engineer — Agentic Systems &amp; RAG</div>
+    <h1>I build AI systems that route, retrieve, and act — not just chat.</h1>
+    <p class="lede">B.Tech IT student building agentic AI and RAG applications on Azure and the
+      open-source LLM stack — LangChain, LangGraph, MCP, and vector search.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#projects">See the work</a>
+      <a class="btn ghost" href="https://github.com/AtinChoudhary06" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="mailto:atin06choudhary@gmail.com">Email me</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2 style="font-family: var(--font-display); font-size:1.4rem; font-weight:600; margin-bottom:16px;">About</h2>
+        <p>B.Tech IT student focused on agentic AI, RAG, and applied ML — spanning Azure's AI stack (OpenAI, AI Search, Document Intelligence, AI Foundry) and the open-source agent ecosystem (LangChain, LangGraph, MCP).</p>
+        <p>Every project ships with a live demo, and I pay attention to the parts most tutorials skip: evaluation for faithfulness and groundedness, and input/output guardrails — the difference between a demo and something you'd trust.</p>
+      </div>
+      <dl class="facts">
+        <dt>Location</dt><dd>Jaipur, India</dd>
+        <dt>Degree</dt><dd>B.Tech, Information Technology</dd>
+        <dt>Institute</dt><dd>Global Institute of Technology</dd>
+        <dt>CGPA</dt><dd>8.9 / 10</dd>
+        <dt>Timeline</dt><dd>Jul 2023 – Jul 2027</dd>
+        <dt>Status</dt><dd>Open to internships &amp; full-time</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="toolkit">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">stack</span><h2>What I build with</h2></div>
+      <div class="toolkit-grid">
+        <div class="toolkit-group">
+          <h3>Azure AI</h3>
+          <div class="toolkit-tags">
+            <span>Azure OpenAI</span><span>AI Search</span><span>Doc Intelligence</span>
+            <span>AI Foundry</span><span>Blob Storage</span><span>App Service</span>
+          </div>
+        </div>
+        <div class="toolkit-group">
+          <h3>GenAI &amp; agents</h3>
+          <div class="toolkit-tags">
+            <span>LangChain</span><span>LangGraph</span><span>MCP</span>
+            <span>Agentic AI (ReAct)</span><span>RAG</span><span>FAISS</span><span>ChromaDB</span>
+          </div>
+        </div>
+        <div class="toolkit-group">
+          <h3>Evaluation &amp; guardrails</h3>
+          <div class="toolkit-tags">
+            <span>Faithfulness</span><span>Relevancy</span><span>Groundedness</span>
+            <span>I/O guardrails</span><span>Hallucination checks</span>
+          </div>
+        </div>
+        <div class="toolkit-group">
+          <h3>ML &amp; data</h3>
+          <div class="toolkit-tags">
+            <span>XGBoost</span><span>SMOTE</span><span>Scikit-learn</span>
+            <span>Pandas</span><span>NumPy</span><span>SHAP</span>
+          </div>
+        </div>
+        <div class="toolkit-group">
+          <h3>Backend &amp; data stores</h3>
+          <div class="toolkit-tags">
+            <span>FastAPI</span><span>Streamlit</span><span>PostgreSQL</span>
+            <span>MySQL</span><span>DuckDB</span>
+          </div>
+        </div>
+        <div class="toolkit-group">
+          <h3>Core CS &amp; DevOps</h3>
+          <div class="toolkit-tags">
+            <span>DSA</span><span>OOPs</span><span>DBMS</span>
+            <span>OS</span><span>Networks</span><span>GitHub Actions</span><span>HF Spaces</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">experience</span><h2>Internship</h2></div>
+      <div class="job">
+        <div class="when">May – Jul 2026</div>
+        <div>
+          <h3>Artificial Intelligence Intern</h3>
+          <div class="org">Bright Hub Private Limited · 45-day AI internship program</div>
+          <ul>
+            <li>Built a RAG-powered Medical AI Assistant for uploading medical PDFs and asking context-aware questions, using FastAPI, LangChain, Pinecone, Gemini embeddings, and a Groq-hosted LLM.</li>
+            <li>Implemented the full retrieval pipeline — recursive text chunking, Gemini embeddings, Pinecone vector storage, and similarity search — with source attribution for grounded answers.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">selected work</span><h2>Seven projects, shipped not just committed</h2></div>
+
+      <div class="project">
+        <div class="project-head"><h3>TripMate — Agentic Travel Planner</h3><span class="date">Jul 2026</span></div>
+        <p>A multi-agent travel-planning system with a Supervisor agent that routes each request to flight, hotel, weather, budget, and itinerary specialist agents over MCP — with an input guardrail and human-in-the-loop approval before finalizing any itinerary, checkpointed in PostgreSQL.</p>
+        <div class="stack"><span>LangGraph</span><span>MCP</span><span>Groq Llama 3.3</span><span>FastAPI</span><span>Streamlit</span><span>PostgreSQL</span></div>
+        <div class="plinks">
+          <a href="https://multi-agent-het2m3hepxzdzy9flwipcn.streamlit.app/" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/TripMate-AI" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>Azure DocuMind — Enterprise RAG Assistant</h3><span class="date">Jun 2026</span></div>
+        <p>A cloud-native RAG pipeline built entirely on Azure — Document Intelligence for parsing, Azure OpenAI for embeddings, AI Search for retrieval, and AI Foundry for grounded answer generation. Backend and frontend deployed on Azure App Service with GitHub Actions CI/CD.</p>
+        <div class="stack"><span>Azure OpenAI</span><span>AI Search</span><span>Doc Intelligence</span><span>AI Foundry</span><span>FastAPI</span><span>Streamlit</span></div>
+        <div class="plinks">
+          <a href="https://rag-chatbot-frontend-atin-dbfcakh6c8a9cnb9.koreacentral-01.azurewebsites.net/" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/azure-pdf-rag-chatbot" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>E-commerce Churn Predictor</h3><span class="date">2026</span></div>
+        <p>A machine learning app that predicts which customers are likely to churn, using feature engineering on behavioral and transaction data, SMOTE to handle class imbalance, and SHAP for explainable, per-customer risk drivers behind each prediction.</p>
+        <div class="stack"><span>XGBoost</span><span>Random Forest</span><span>SMOTE</span><span>SHAP</span><span>Scikit-learn</span><span>Streamlit</span></div>
+        <div class="plinks">
+          <a href="https://ecommerce-churn-predictor-gdmt.onrender.com/" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/ecommerce-churn-predictor" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>Autonomous Data Analyst Agent</h3><span class="date">May 2026</span></div>
+        <p>An agent that profiles CSV/Excel data and answers natural-language questions by auto-writing pandas code, with SQL querying over DuckDB, auto-generated Plotly charts, and one-click executive reports.</p>
+        <div class="stack"><span>LangChain</span><span>Groq Llama 3.1</span><span>DuckDB</span><span>Plotly</span><span>Streamlit</span></div>
+        <div class="plinks">
+          <a href="https://huggingface.co/spaces/atin-ds-choudhary/ai-data-analyst-agent" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/ai-data-analyst-agent" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>AI Resume Analyzer &amp; Job Matching Agent</h3><span class="date">2026</span></div>
+        <p>Upload a resume and paste a job description — the agent indexes the resume with vector embeddings, retrieves the relevant sections, and returns a match score, a skill-gap report, and concrete recommendations.</p>
+        <div class="stack"><span>LangChain</span><span>Llama 3.1</span><span>ChromaDB</span><span>Streamlit</span></div>
+        <div class="plinks">
+          <a href="https://huggingface.co/spaces/atin-ds-choudhary/ai-job-matching-agent" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/ai-job-matching-agent" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>Medical Assistant AI</h3><span class="date">2026</span></div>
+        <p>A RAG-powered healthcare assistant — upload medical PDFs and ask context-aware questions, with semantic search over Pinecone, Gemini embeddings, and source-attributed answers from a Groq-hosted LLM.</p>
+        <div class="stack"><span>FastAPI</span><span>LangChain</span><span>Pinecone</span><span>Gemini</span><span>Groq</span></div>
+        <div class="plinks">
+          <a href="https://medical-assistant-ai-ncny.onrender.com" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/medical_assistant_ai" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>RAG PDF Chatbot</h3><span class="date">2026</span></div>
+        <p>Upload any PDF or text file and ask questions in plain language. A full retrieval-augmented generation pipeline finds the relevant sections and generates grounded answers — sourced from the document, not the model's memory.</p>
+        <div class="stack"><span>RAG pipeline</span><span>Groq Llama 3.1</span><span>Streamlit</span><span>Python</span></div>
+        <div class="plinks">
+          <a href="https://huggingface.co/spaces/atin-ds-choudhary/rag_pdf_chatbot" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/pdf-rag-chatbot_" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-head"><h3>ResearchMind AI — Research Copilot</h3><span class="date">2026</span></div>
+        <p>Give it one research topic — a planner agent runs the whole pipeline with no human in the loop: searches ArXiv, reads papers, writes per-paper summaries, builds a cross-paper comparison table, surfaces research gaps, then drafts the literature review.</p>
+        <div class="stack"><span>LangGraph-style planner</span><span>Groq Llama 3.3</span><span>FastAPI</span><span>Streamlit</span></div>
+        <div class="plinks">
+          <a href="https://researchmind-ai-geti.onrender.com" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/AtinChoudhary06/researchmind-ai" target="_blank" rel="noopener">Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">foundation</span><h2>Education &amp; certifications</h2></div>
+
+      <div class="edu-row">
+        <div>
+          <h3>Bachelor of Technology — Information Technology</h3>
+          <div class="org">Global Institute of Technology, Jaipur</div>
+        </div>
+        <div class="meta">Jul 2023 – Jul 2027<br>CGPA 8.9 / 10</div>
+      </div>
+
+      <ul class="certs">
+        <li><a href="https://drive.google.com/file/d/1eDzG_1a81pvG_X1hjH_PAg2MzbrEZnA7/view?usp=sharing" target="_blank" rel="noopener">Introduction to Generative AI and Agents</a><span>Microsoft</span></li>
+        <li><a href="https://drive.google.com/file/d/1HM0qPs1_oiz010M63CDiA70obt7RTz2w/view?usp=sharing" target="_blank" rel="noopener">AI Fundamentals</a><span>IBM</span></li>
+        <li><a href="https://drive.google.com/file/d/14xh5I_nJm2VXsszybuV8QimwVbe9N0wg/view?usp=sharing" target="_blank" rel="noopener">Introduction to Generative AI</a><span>Google Cloud · Simplilearn</span></li>
+        <li><a href="https://drive.google.com/file/d/1i5FGtL_ZpImUIdNDwbsMSxhPZglCYNJa/view?usp=sharing" target="_blank" rel="noopener">Python</a><span>Kaggle</span></li>
+        <li><a href="https://drive.google.com/file/d/1GahIiuHtf6KKBZ9IfzWOvjwrIKbX3PxU/view?usp=drive_link" target="_blank" rel="noopener">SQL (Basic) Certification</a><span>HackerRank</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <h2>Let's build something that ships.</h2>
+      <p style="color:var(--ink-soft); max-width:52ch; margin-top:14px;">Open to AI Engineer, GenAI, and Machine Learning internship roles, with potential for full-time. Happy to walk through the architecture of any project above.</p>
+      <div class="contact-row">
+        <a href="mailto:atin06choudhary@gmail.com">atin06choudhary@gmail.com</a>
+        <a href="tel:+918871247036">+91 88712 47036</a>
+        <a href="https://github.com/AtinChoudhary06" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="fine">Jaipur, India · © 2026</div>
+    </div>
+  </footer>
+
+</main>
+
+</body>
+</html>
